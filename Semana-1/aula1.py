@@ -3,8 +3,14 @@
 Raiz de Equação Quadrática 
 """
 import math
-
+    
 def zeros(a,b,c):
+# se a for igual 0 a solução -c/b   
+    if a == 0:
+        if b == 0:
+            raise ValueError("A equação não possui solução")
+        else:
+            return -c/b
 
     delta = b**2 - (4*a*c) 
     if delta < 0:
@@ -22,12 +28,8 @@ def main():
     print(x)
 if __name__ =="__main__":
     main()
-# se a for igual 0 a solução -c/b    
-"""
-if a == 0:
-    x = -c/b
-    print(x)
-"""    
+
+   
 
 
     
