@@ -1,3 +1,7 @@
+"""
+Faça na linguagem Python uma função que calcula o fatorial de um número.
+O fatorial de um número é o produto do número por todos os antecessores positivos.
+"""
 def factorial(n: int) -> int:
     if n < 0:
         raise ValueError("O número deve ser não negativo.")
