@@ -25,7 +25,7 @@ def exp_series(x, atol=0.0):
 
 # Demonstração
 def main ():
-
+    print("\n--Atividade1--")
     for val in [1.0, 5.0, -2.0]:
         approx, nterms, last = exp_series(val)
         print(f"x={val:+g} -> e^x ≈ {approx:.16g} (math.exp={math.exp(val):.16g}, termos={nterms})")
