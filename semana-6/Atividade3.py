@@ -1,4 +1,9 @@
 import numpy as np
+from algoritmos import (
+    lu,
+    jacobi,
+    seidel,
+)
 
 # Sistema original:
 # x1 + 10x2 + 3x3 = 27
@@ -28,15 +33,35 @@ def main():
     print(X)
     print("\nSolução LU x:")
     X = lu(A, B)
-    print(X)
-
+    print(X)   
     print("\nPermutação:")
-
     print("Matriz A:")
     print(a)
     print("\nVetor B:")
     print(b)
+    print("\nSolução NumPy x:")
+    X = np.linalg.solve(a, b)
+    print(X)
+    print("\nSolução LU x:")
+    X = lu(a, b)
+    print(X)
+# falta a resolver Solução Jacobi Solução Seidel x:
+    print("\nSolução da Permutação:")
+    print ("\nSolução Jacobi x:")
+    X = jacobi(a, b, 100, 1e-8)
+    print(X)
+    print ("\nSolução Seidel x:")
+    X = seidel(a, b, 100, 1e-8)
+    print(X)
+"""
+    print("\nSolução Jacobi x:")
+    X = jacobi(A, B, 100, 1e-3)
+    print(X)
+    
+    print("\nSolução Seidel x:")
+    X = seidel(A, B, 100, 1e-3)
+    print(X)
+"""
 
-# duvida ao que fazer apos a permutação  
 if __name__ == "__main__":
     main()
