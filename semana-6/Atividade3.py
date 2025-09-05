@@ -45,7 +45,6 @@ def main():
     print("\nSolução LU x:")
     X = lu(a, b)
     print(X)
-# falta a resolver Solução Jacobi Solução Seidel x:
     print("\nSolução da Permutação:")
     print ("\nSolução Jacobi x:")
     X = jacobi(a, b, 100, 1e-8)
