@@ -56,6 +56,7 @@ def main():
     print(f"raiz newton-raphson = {r}")
     r = secante(-1.8, -1.7, f1)
     print(f"raiz secante = {r}")
+
     # Atividade 2
     print("-- Atividade 2 --")
     r = pontofixo(1.0, g2, TOL=1e-5)
@@ -66,6 +67,7 @@ def main():
     print(f"raiz newton-raphson = {r:.5}")
     r = secante(1.0, 1.1, f2, TOL=1e-5)
     print(f"raiz secante = {r:.5}")
+    
     # Atividade 3
     print("-- Atividade 3 --")
     r = pontofixo(1.0, g3)
@@ -76,6 +78,7 @@ def main():
     print(f"raiz newton-raphson = {r}")
     r = secante(1.0, 1.1, f3)
     print(f"raiz secante = {r}")
+    
     # Atividade 4
     print("-- Atividade 4 --")
     VRs = [
@@ -94,6 +97,7 @@ def main():
             print(f"V={V} V, R={R/1e3:.0f}kΩ --> vd = {r:.3f} V")
         except ValueError as error:
             print(f"V={V} V, R={R/1e3:.0f}kΩ --> {error}")
+    
     # Atividade 5
     print("-- Atividade 5 --")
     r = newton_raphson(550, f5)
