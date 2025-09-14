@@ -1,66 +1,52 @@
 import numpy as np
-from algoritmos import (
-    lu,
-    jacobi,
-    seidel,
-)
+from algoritmos import jacobi, seidel
 
-# Sistema original:
+# Atividade 3
+# Faça uma permutação de linhas no sistema abaixo e resolva pelos métodos de Jacobi e Gauss-Seidel:
 # x1 + 10x2 + 3x3 = 27
 # 4x1 + 0x2 + x3 = 6
 # 2x1 + x2 + 4x3 = 12
 
 def main():
-    #Atividade3
     print("-- Atividade 3 --")
-    A=np.array([[1,10,3],[4,0,1],[2,1,4]],)
-    B=np.array([27.0, 6.0 , 12.0])
 
-    # Permutação de linhas: troca a linha 0 com a linha 1
-    perm = [1, 0, 2]  # novo ordem de linhas: [linha2, linha1, linha3]
+    # Matriz de coeficientes do sistema original
+    A = np.array([[1, 10, 3], [4, 0, 1], [2, 1, 4]])
+
+    # Vetor de termos independentes
+    B = np.array([27.0, 6.0, 12.0])
+
+    # O sistema original não é diagonalmente dominante.
+    # É necessário permutá-lo para que os métodos de Jacobi e Gauss-Seidel convirjam.
+    
+    # Permutação de linhas para tornar a matriz diagonalmente dominante
+    # Trocando a linha 0 com a 1, e a 1 com a 2, a matriz se torna:
+    # 4x1 + 0x2 + x3 = 6
+    # 2x1 + x2 + 4x3 = 12
+    # x1 + 10x2 + 3x3 = 27
+
+    perm = [1, 2, 0]
     a = A[perm, :]
     b = B[perm]
-    
-    print("\nMatriz Original:")
-    
-    print("Matriz A:")
+
+    print("\nMatriz Original A:")
     print(A)
-    print("\nVetor B:")
+    print("\nVetor Original B:")
     print(B)
-    
-    print("\nSolução NumPy x:")
-    X = np.linalg.solve(A, B)
-    print(X)
-    print("\nSolução LU x:")
-    X = lu(A, B)
-    print(X)   
-    print("\nPermutação:")
-    print("Matriz A:")
+
+    print("\nMatriz Permutada a (Diagonalmente Dominante):")
     print(a)
-    print("\nVetor B:")
+    print("\nVetor Permutado b:")
     print(b)
-    print("\nSolução NumPy x:")
-    X = np.linalg.solve(a, b)
-    print(X)
-    print("\nSolução LU x:")
-    X = lu(a, b)
-    print(X)
-    print("\nSolução da Permutação:")
-    print ("\nSolução Jacobi x:")
-    X = jacobi(a, b, 100, 1e-8)
-    print(X)
-    print ("\nSolução Seidel x:")
-    X = seidel(a, b, 100, 1e-8)
-    print(X)
-"""
-    print("\nSolução Jacobi x:")
-    X = jacobi(A, B, 100, 1e-3)
-    print(X)
-    
-    print("\nSolução Seidel x:")
-    X = seidel(A, B, 100, 1e-3)
-    print(X)
-"""
+
+    # Resolvendo o sistema permutado pelos métodos de Jacobi e Gauss-Seidel
+    print("\nSolução pelo método de Jacobi:")
+    X_jacobi = jacobi(a, b, 100, 1e-8)
+    print(X_jacobi)
+
+    print("\nSolução pelo método de Gauss-Seidel:")
+    X_seidel = seidel(a, b, 100, 1e-8)
+    print(X_seidel)
 
 if __name__ == "__main__":
     main()
