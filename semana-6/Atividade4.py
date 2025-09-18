@@ -2,9 +2,7 @@ import numpy as np
 from algoritmos import lu
 
 def solve_circuit(V, R1, R2, R3, R4, R5, R6, R7, R8):
-    """
-    Monta e resolve o sistema de equações lineares para o circuito.
-    """
+
     # Matriz A
     A = np.array([
         [-(1/R1 + 1/R2 + 1/R5), 1/R2, 0, 0],
