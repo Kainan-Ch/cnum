@@ -14,7 +14,7 @@ def solve_circuit(V, R1, R2, R3, R4, R5, R6, R7, R8):
     # Vetor B
     B = np.array([-V/R1, 0, 0, 0])
 
-    # Resolvendo o sistema para V2, V3, V4, V5
+   
     X = lu(A, B)
     return X
 
