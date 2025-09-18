@@ -44,3 +44,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# revisar o conceito da questão para resolver a questão colocando a criação da matriz 

@@ -16,15 +16,8 @@ def main():
     # Vetor de termos independentes
     B = np.array([27.0, 6.0, 12.0])
 
-    # O sistema original não é diagonalmente dominante.
-    # É necessário permutá-lo para que os métodos de Jacobi e Gauss-Seidel convirjam.
-    
-    # Permutação de linhas para tornar a matriz diagonalmente dominante
-    # Trocando a linha 0 com a 1, e a 1 com a 2, a matriz se torna:
-    # 4x1 + 0x2 + x3 = 6
-    # 2x1 + x2 + 4x3 = 12
-    # x1 + 10x2 + 3x3 = 27
 
+#rever o conceito de permutação esta causando confução 
     perm = [1, 2, 0]
     a = A[perm, :]
     b = B[perm]
